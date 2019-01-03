@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 
@@ -23,7 +24,7 @@ import frc.robot.subsystems.*;
  * project.
  */
 public class Robot extends TimedRobot {
-  //public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  public static VisionSubSystem m_vision;
   public static OI m_oi;
 
   Command m_autonomousCommand;
@@ -35,6 +36,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    m_vision = new VisionSubSystem();
     m_oi = new OI();
     //m_chooser.addDefault("Default Auto", new ExampleCommand());
     // chooser.addObject("My Auto", new MyAutoCommand());
